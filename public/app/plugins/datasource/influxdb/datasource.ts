@@ -285,7 +285,7 @@ export default class InfluxDatasource extends DataSourceWithBackend<InfluxQuery,
       query = query.replace('$timeFilter', timeFilter);
     }
 
-    return this._influxRequest(this.httpMode, '/query', { q: query, epoch: 'ms' }, options);
+    return this._influxRequest(this.httpMode, '/query', { q: query, epoch: 'ns' }, options);
   }
 
   serializeParams(params: any) {
